@@ -1,0 +1,24 @@
+<%- include('header')%>
+<div class="container">
+    <h1 class="text-center">Product By ProductPage</h1>
+    <a href="/pagedata/1">page1</a>
+    <a href="/pagedata/2">page2</a>
+    <a href="/pagedata/3">page3</a>
+    <a href="/pagedata/4">page4</a>
+    <a href="/pagedata/5">page5</a>
+    <a href="/pagedata/6">page6</a>
+    <a href="/pagedata/7">page7</a>
+    <div class="row">
+        <%smita.forEach(function(obj){%>
+        <div class="col-xl-4 text-center">
+         <img src="/public/products/<%=obj.filepath%>" class="img-fluid">
+         <h2><%=obj.prPrice%></h2>
+         <p><%=obj.prName%></p>        
+         <p><button class="btn btn-warning">Add To Cart</button></p>
+         <p><a href="/edit/<%=obj._id%>"><i class="far fa-edit"></i></a> <a href="/delete/<%=obj._id%>"><i class="far fa-trash-alt"></i></p>
+        
+        </div>
+        <% })%>
+    </div>
+</div>
+<%- include('footer')%>
